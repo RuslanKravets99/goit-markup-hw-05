@@ -382,92 +382,91 @@
                 </li>
               </ul>
              </div>
-             <form class="subscribe-form"
-                   name="subscribe_email">
-                  <div class="subscribe-wrap">
-                    <label for="subscribe-label-form"
-                           class="label-subsc-inp">
-                          Subscribe
-                          </label>
-                    <input class="em-subscr-input"
-                           id="subscribe-label-form"
+             <div class="subscribe-form-wrap">
+                  <p class="subsc-par">Subscribe</p>
+                  <form class="subscribe-form">
+                    <label class="subscribe-label">
+                      <input class="em-subscr-input"
+                           name="subscribe_email"
                            type="email"
                            placeholder="E-mail">
-                  </div>
-                  <button type="submit"
+                    </label>
+                   
+                  
+                    <button type="submit"
                           name="subscribe_email"
                           class="btn-subscribe">
                         Subscribe
-                        <svg class="svg-subscribe" height="24" width="20">
+                        <svg class="svg-subscribe" height="24" width="24">
                           <use href="./images/icons.svg#icon-send"></use>
                         </svg>
                         </button> 
-                  </form> 
+                   </form>
+              </div> 
         </div>
         
     </footer>
-    <div class="modal-window is-open" data-modal>
-      <div class="modal-forms">
+    <div class="modal-window-container is-open" data-modal>
+      <div class="modal-window">
+        <button type="button" data-modal-close class="close-button">
+          <svg class="svg-close" height="8" width="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="legend-text">Leave your contacts and we will call you back</p>
         <form class="form-block">
-          <button type="button" data-modal-close class="close-button">
-            <svg class="svg-close" height="8" width="8">
-              <use href="./images/icons.svg#icon-close"></use>
-            </svg>
-          </button>
-          <fieldset class="fild-form">
-            <legend class="legend-text">Leave your contacts and we will call you back</legend>
-              <div class="field-wrap">
-                <label class="label-form"
-                     for="name">Name</label>   
+          <div class="field-form">
+               <label class="label-form"
+                       for="user-name">Name</label>   
                   <div class="input-wraper">
+                  <input class="input-form"
+                    name="user-name"
+                    type="text"
+                    id="name"
+                    required>
                     <svg class="svg-form" height="24" width="18">
                       <use href="./images/icons.svg#icon-person"></use>
                     </svg>
-                    <input class="input-form"
-                       name="name"
-                       type="text"
-                       id="name"
-                       required>
+                    
                   </div> 
-              </div> 
+               
              
-              <div class="field-wrap">
+              
                  <label class="label-form"
                        for="phone">Phone</label>
                     <div class="input-wraper">
-                      <svg class="svg-form" height="24" width="18">
-                        <use href="./images/icons.svg#icon-phone"></use>
-                      </svg>
-                      <input class="input-form"
+                    <input class="input-form"
                         name="tel_number"
                         type="tel"
                         id="phone"
                         required>
+                      <svg class="svg-form" height="24" width="18">
+                        <use href="./images/icons.svg#icon-phone"></use>
+                      </svg>
+                      
                     </div>
-              </div>
-              
-              <div class="field-wrap">
-                <label class="label-form"
+                 <label class="label-form"
                      for="email">Email</label>
                   <div class="input-wraper">
-                    <svg class="svg-form" height="24" width="18">
-                      <use href="./images/icons.svg#icon-email"></use>
-                    </svg>
-                    <input class="input-form"
+                  <input class="input-form"
                        name="user_email"
                        type="email"
                        id="email"
                        required>
+                    <svg class="svg-form" height="24" width="18">
+                      <use href="./images/icons.svg#icon-email"></use>
+                    </svg>
+                    
                   </div>
-              </div>
+              
                 
               <div class="textarea-wrap">
-                <label class="label-form" for="comment">Comment</label>
+                <label class="label-form" for="user-comment">Comment</label>
                 
                   <textarea class="textarea-form"
                             name="textarea_info"
                             placeholder="Text input"
-                            id="comment"></textarea>
+                            id="user-comment"></textarea>
               </div>
               <div class="checkbox-wrap">
                 
@@ -488,7 +487,7 @@
 
               
               <button class="btn-form" type="submit">Send</button>
-          </fieldset>
+           </div>
         </form>
       </div>
     </div>

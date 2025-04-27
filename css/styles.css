@@ -575,52 +575,60 @@ margin-bottom: 72px;
     height: 24px;
     fill: var(--cloud);
 }
-.subscribe-form{
-    margin-left: 80px;
-    display: flex;
-    align-items: flex-end;
+.subscribe-form-wrap{
+    margin-left: 80px;  
 }
-.subscribe-wrap{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-right: 24px;
-}
-.label-subsc-inp{
+.subsc-par{
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.02em;
     color: var(--white);
+    margin-bottom: 16px;
 }
+.subscribe-form{
+    margin-bottom: 16px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    
+    display: flex;
+    gap: 24px;
+}
+   
 .em-subscr-input{
     border: 1px solid var(--white);
     border-radius: 4px;
     width: 264px;
     height: 40px;
 
-    padding: 8px 16px;
-    outline: none;
-    background: var(--navy-blue);
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #ffffff; 
+
+
+    padding-left: 16px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background: transparent;
     transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-}
-.em-subscr-input:active,.em-subscr-input:focus{
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background-color: var(--white);
-}
+ }
 .em-subscr-input::placeholder{
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 200%;
-    letter-spacing: 0.04em;
-    color: var(--white);
+    color: #ffffff;
 }
+
 .btn-subscribe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
     border-radius: 4px;
-    padding: 8px 24px;
+
     width: 165px;
     height: 40px;
     background: var(--iris);
@@ -630,10 +638,10 @@ margin-bottom: 72px;
     font-size: 16px;
     line-height: 150%;
     letter-spacing: 0.04em;
-    text-align: left;
+    text-align: center;
     color: var(--white);
     border: none;
-    position: relative;
+
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
@@ -642,17 +650,16 @@ margin-bottom: 72px;
 background: var(--ocean);
 }
 .svg-subscribe{
-    position: absolute;
-    top: 8px;
-    right: 24px;
+    
     fill: var(--white);
+    margin-left: 16px;
 }
 
 /*#end Footer*/
 
 /* Modal window */
 
-.modal-window{
+.modal-window-container{
   background-color:  var(--navy-blue-modal);  
   
   position: fixed;
@@ -661,27 +668,30 @@ background: var(--ocean);
   width: 100%;
   height: 100%;
   z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-window.is-open{
+.modal-window-container.is-open{
  opacity: 1;
  pointer-events: auto;
 }
-.modal-forms{
+.modal-window{
   background-color: var(--dairy);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   width: 408px;
   padding: 72px 24px 24px 24px;
-  position: relative;
-  transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 584px;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 
 }
 .form-block{
@@ -690,7 +700,9 @@ background: var(--ocean);
     
 }
 .close-button{
-    border: none;
+    border:  1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
     position: absolute;
     top: 24px;
     right: 24px;
@@ -703,43 +715,41 @@ background: var(--ocean);
     height: 24px;
     stroke-width: 1px;
     stroke: rgba(0, 0, 0, 0.1);
-    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-button:hover, .close-button:focus{
+    border: none;
     background-color: var(--ocean);
 }
 .svg-close{
     fill: var(--navy-blue);
-    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .close-button:hover .svg-close{
     fill: var(--white);
-}
-.fild-form{
+ }
+.legend-text{
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: var(--navy-blue);
+    margin-bottom: 16px;
+  }
+.field-form{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0;
     border: none;
+    width: 100%;
+    margin-bottom: 8px;
 
 }
-.legend-text{
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: 0.02em;
-  text-align: center;
-  color: var(--navy-blue);
-  margin-bottom: 16px;
-}
-.field-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    width: 100%;
-  }
+
+
 .label-form{
     font-family: var(--font-family);
     font-weight: 400;
@@ -754,28 +764,33 @@ background: var(--ocean);
 .input-wraper{
  width: 100%;
  position: relative;
+ margin-bottom: 8px;
 }
-.svg-form{
- position: absolute;
- top: 8px;
- left: 16px;
-}
+
 .input-form{
     border: 1px solid var(--navy-blue-modal);
     border-radius: 4px;
     width: 100%;
     height: 40px;
     padding-left: 38px;
-    transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.svg-form{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%); 
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
+   }
 .input-form:focus,.input-form:active{
     border: 1px solid var(--iris);
     outline: none;
     
 }
-.field-wrap:has(.input-form:active) .svg-form, 
-.field-wrap:has(.input-form:focus) .svg-form{
+.input-wraper:has(.input-form:active) .svg-form, 
+.input-wraper:has(.input-form:focus) .svg-form{
     fill: var(--iris);
 }
 
