@@ -741,14 +741,7 @@ background: var(--ocean);
     margin-bottom: 16px;
   }
 .field-form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0;
-    border: none;
-    width: 100%;
     margin-bottom: 8px;
-
 }
 
 
@@ -809,7 +802,6 @@ background: var(--ocean);
  width: 100%;
  height: 120px;
  padding: 8px 16px;
- margin-bottom: 16px;
  outline: transparent;
  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  
@@ -838,37 +830,27 @@ background: var(--ocean);
    gap: 8px;
    width: 100%;
 }
-.checkbox-wrap input:checked + .custom-checkbox{
+.checkbox-wrap:has(input:checked)  .custom-checkbox{
     background-color: var(--ocean);
     fill: var(--cloud);
 
 
 }
-.visually-hidden{
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip-path: inset(100%);
-        clip: rect(0 0 0 0);
-        white-space: nowrap;
-        border: 0;
-      }
 
 .custom-checkbox{
     width: 16px;
     height: 16px;
     border-radius: 2px;
     border: 1px solid var(--navy-blue-modal);
-    display: flex;
+    display: inline-flex;
+    margin-right: 8px;
     justify-content: center;
     align-items: center;
-    fill: none;
+    fill: transparent;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .text-priv-pol{
     font-family: var(--font-family);
     font-weight: 400;
@@ -883,16 +865,15 @@ background: var(--ocean);
     text-decoration-skip-ink: none;
     color: var(--iris);
 }
-.sp-words{
-    line-height: 133%;
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: var(--iris);
-}
+
 .btn-form{
+    display: block;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 4px;
     padding: 16px 32px;
-    width: 169px;
+    min-width: 169px;
     height: 56px;
 
     /*text style*/
@@ -911,6 +892,5 @@ background: var(--ocean);
 }
 .btn-form:hover, .btn-form:focus{
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    cursor: pointer;
     background: var(--ocean);
 } 
