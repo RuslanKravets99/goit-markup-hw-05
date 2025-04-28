@@ -629,7 +629,7 @@ margin-bottom: 72px;
     cursor: pointer;
     border-radius: 4px;
 
-    width: 165px;
+    min-width: 165px;
     height: 40px;
     background: var(--iris);
 
@@ -746,6 +746,7 @@ background: var(--ocean);
 
 
 .label-form{
+    display: block;
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 12px;
@@ -833,6 +834,7 @@ background: var(--ocean);
 .checkbox-wrap:has(input:checked)  .custom-checkbox{
     background-color: var(--ocean);
     fill: var(--cloud);
+    border: none;
 
 
 }
